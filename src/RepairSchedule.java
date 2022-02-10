@@ -46,7 +46,16 @@ public class RepairSchedule
      */
     public ArrayList<Integer> availableMechanics()
     {
-        /* to be implemented in part (b) */
+        ArrayList<Integer> mechanics = new ArrayList<Integer> ();
+        for (int i = 0; i < numberOfMechanics; i++)
+        {
+            mechanics.add(i);
+        }
+        for (int i = 0; i < schedule.size(); i++)
+        {
+            mechanics.remove(schedule.get(i).getMechanicNum());
+        }
+        return mechanics;
     }
 
     /** Removes an element from schedule when a repair is complete. */
